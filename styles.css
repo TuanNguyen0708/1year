@@ -2,3 +2,11 @@
 @media(max-width:760px){.stage{padding:12px}.envelope-scene{width:94vw}.seal{width:66px;height:66px}.invitation{width:calc(100vw - 20px);height:calc(100svh - 32px);grid-template-columns:1fr;grid-template-rows:34% 66%;border-radius:12px}.photo-panel{padding:25px 28px;background-position:center 38%}.photo-copy>span{font-size:7px}.photo-copy h1{font-size:48px;margin:13px 0}.photo-copy p{display:none}.date-badge{width:72px;height:72px;right:18px;top:17px}.date-badge b{font-size:27px}.date-badge span{font-size:6px}.content-panel{padding:22px 25px 20px}.tabs{height:35px;gap:23px}.tabs button{padding-bottom:10px}.page{padding-top:23px}.page h2{font-size:37px;margin:11px 0 14px}.lead{font-size:11px;line-height:1.65}.quote{margin:16px 0;font-size:14px}.gold-button{height:45px}.detail-list>div{padding:10px 0}.detail-actions{margin-top:8px}.page form{gap:10px}.page input,.page select,.page textarea{padding:7px 0}.close-card{right:9px;top:8px;width:34px;height:34px}.sound-note{display:none}}
 @media(max-width:390px){.photo-panel{padding:20px}.photo-copy h1{font-size:41px}.content-panel{padding:18px 20px}.page h2{font-size:32px}.tabs{gap:16px}.quote{display:none}.page form .gold-button{margin-top:0}.detail-list>div{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Keep the closed envelope clickable above the hidden invitation layer. */
+.stage{isolation:isolate}
+.envelope-scene{position:relative;z-index:30}
+.envelope-scene.hidden{z-index:0}
+.envelope{z-index:31}
+.seal{z-index:999;pointer-events:auto;touch-action:manipulation}
+.invitation{z-index:10}
+.invitation.visible{z-index:50}
